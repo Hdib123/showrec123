@@ -19,7 +19,8 @@ router.get("/signup", shouldNotBeLoggedIn, (req, res) => {
 });
 
 router.post("/signup", shouldNotBeLoggedIn, (req, res) => {
-  const { username, password } = req.body;
+  const { email, username, password } = req.body;
+  console.log("RUNNING");
 
   if (!username) {
     return res
@@ -46,12 +47,12 @@ router.post("/signup", shouldNotBeLoggedIn, (req, res) => {
   */
 
   // Search the database for a user with the username submitted in the form
-  User.findOne({ username }).then((found) => {
+  User.findOne({ username, email }).then((found) => {
     // If the user is found, send the message username is taken
     if (found) {
       return res
         .status(400)
-        .render("signup", { errorMessage: "Username already taken." });
+        .render("signup", { errorMessage: "Username or email already taken." });
     }
 
     // if user is not found, create a new user - start with hashing the password
@@ -61,6 +62,7 @@ router.post("/signup", shouldNotBeLoggedIn, (req, res) => {
       .then((hashedPassword) => {
         // Create a user and save it in the database
         return User.create({
+          email,
           username,
           password: hashedPassword,
         });
@@ -79,7 +81,7 @@ router.post("/signup", shouldNotBeLoggedIn, (req, res) => {
         if (error.code === 11000) {
           return res.status(400).render("auth/signup", {
             errorMessage:
-              "Username need to be unique. The username you chose is already in use.",
+              "Username/email need to be unique. The username/email you chose is already in use.",
           });
         }
         return res
@@ -129,7 +131,7 @@ router.post("/login", shouldNotBeLoggedIn, (req, res, next) => {
         }
         req.session.user = user;
         // req.session.user = user._id; // ! better and safer but in this case we saving the entire user object
-        return res.redirect("/");
+        return res.redirect("/", { user });
       });
     })
 

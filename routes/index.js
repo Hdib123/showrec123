@@ -8,7 +8,7 @@ router.get("/", (req, res, next) => {
     stitle: "Example",
   };
 
-  jikanjs
+  /*  jikanjs
     .loadAnime(19815, "episodes")
     .then((response) => {
       response.episodes.forEach((element) => {
@@ -20,6 +20,7 @@ router.get("/", (req, res, next) => {
     .catch((err) => {
       console.error(err); // in case a error happens
     });
+    */
 
   res.render("index", { series });
 });

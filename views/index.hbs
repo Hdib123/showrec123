@@ -1,6 +1,9 @@
-<h1>{{title}} 🚀</h1>
-<p>Welcome Ironhacker! let's roll</p>
-{{#if series}}
-
-<p>{{stitle}}</p>
+{{#if user}}
+<a href="/auth/logout"><button>Log out</button></a>
+{{else}}
+<a href="/auth/login">Login</a>
+<a href="/auth/signup">Sign Up</a>
 {{/if}}
+<h1>{{title}} 🚀</h1>
+<h4>{{testtest}}</h4>
+<p>Welcome Ironhacker! let's roll</p>
