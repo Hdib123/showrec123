@@ -1,0 +1,21 @@
+<h1>{{returnedShow.name}}</h1>
+<img src="{{returnedShow.mainPic}}" />
+<p>{{returnedShow.score}}</p>
+<p>{{returnedShow.synopsis}}</p>
+<ul>
+  {{#each returnedShow.genre}}
+  <li>{{this}}</li>
+  {{/each}}
+</ul>
+
+<form action="/show/{{returnedShow._id}}/addToFavourites" method="POST">
+
+  <button type="submit">Submit</button>
+</form>
+
+
+
+<a href="/show/{{returnedShow._id}}/addToFavourites">Add to Favorites</a>
+<p>Have you already seen this show ?</p>
+<a href="">Yes</a>
+<a href="">Plan to watch</a>
