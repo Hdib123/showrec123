@@ -1,9 +1,26 @@
 {{#if user}}
-<a href="/auth/logout"><button>Log out</button></a>
+<nav>
+  <a href="/auth/logout">Log out</a>
+</nav>
 {{else}}
-<a href="/auth/login">Login</a>
-<a href="/auth/signup">Sign Up</a>
+<nav>
+  <a href="/auth/login">Login</a>
+  <a href="/auth/signup">Sign Up</a>
+</nav>
 {{/if}}
 <h1>{{title}} 🚀</h1>
-<h4>{{testtest}}</h4>
-<p>Welcome Ironhacker! let's roll</p>
+{{#each response}}
+<h6 id="list">{{this.name}}<br><img src="{{this.mainPic}}"></img> <br>
+  {{this.genre}}<br>
+  {{this.synopsis}} <br>MORE<br>
+  MAL ID: {{this.id}}</h6>
+
+{{/each}}
+
+<style>
+  #list {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+</style>
