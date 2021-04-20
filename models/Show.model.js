@@ -19,11 +19,7 @@ const showSchema = new Schema({
     min: 20,
   },
 
-  score: [
-    {
-      type: Number,
-    },
-  ],
+  score: Number,
 
   id: {
     type: Number,

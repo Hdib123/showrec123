@@ -22,6 +22,10 @@ const userSchema = new Schema({
   viewedShows: {
     type: [{ type: Schema.Types.ObjectId, ref: "Shows" }],
   },
+
+  favoriteShows: {
+    type: [{ type: Schema.Types.ObjectId, ref: "Shows" }],
+  },
 });
 
 const User = model("User", userSchema);

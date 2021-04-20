@@ -1,14 +1,20 @@
 const router = require("express").Router();
-
+const MongoClient = require("mongodb").MongoClient;
 const jikanjs = require("jikanjs");
+const Shows = require("../models/Show.model");
 
 /* GET home page */
 router.get("/", (req, res, next) => {
   let series = {
     stitle: "Example",
   };
+  Shows.find().then((response) => {
+    console.log(`test`, { response });
+    res.render("index", { response });
+  });
+});
 
-  /*  jikanjs
+/*  jikanjs
     .loadAnime(19815, "episodes")
     .then((response) => {
       response.episodes.forEach((element) => {
@@ -21,8 +27,5 @@ router.get("/", (req, res, next) => {
       console.error(err); // in case a error happens
     });
     */
-
-  res.render("index", { series });
-});
 
 module.exports = router;
