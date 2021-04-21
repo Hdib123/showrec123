@@ -5,6 +5,8 @@ const Shows = require("../models/Show.model");
 
 /* GET home page */
 router.get("/", (req, res, next) => {
+  console.log("RUNNING");
+
   let series = {
     stitle: "Example",
   };

@@ -17,10 +17,11 @@ router.post("/:showId/addToFavourites", (req, res, next) => {
 
   User.findByIdAndUpdate(
     req.session.user._id,
-    { $push: { favoriteShows: req.params.showId } },
+    { $addToSet: { favoriteShows: req.params.showId } },
     { new: true }
   ).then((returnedShow) => {
-    res.render("singleShow", { returnedShow });
+    res.redirect(`/show/${req.params.showId}`)
+    // res.render("singleShow", { returnedShow });
     //res.redirect("singleShow", { returnedShow });
     // window.location.pathname = "/";
   });

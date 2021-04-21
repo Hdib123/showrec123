@@ -20,11 +20,11 @@ const userSchema = new Schema({
   },
 
   viewedShows: {
-    type: [{ type: Schema.Types.ObjectId, ref: "Shows" }],
+    type: [{ type: Schema.Types.ObjectId, ref: "Show" }],
   },
 
   favoriteShows: {
-    type: [{ type: Schema.Types.ObjectId, ref: "Shows" }],
+    type: [{ type: Schema.Types.ObjectId, ref: "Show" }],
   },
 });
 
