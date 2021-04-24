@@ -19,12 +19,3 @@ main{
 .padding {
   padding: 190px;
 }
-
-#buttons {
-  display: flex;
-  background: linear-gradient(to right top, #59ae9e, #5aaab6);
-  color: black;
-  padding: 5px;
-  text-decoration: none;
-  justify-content: center;
-}

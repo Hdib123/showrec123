@@ -93,3 +93,15 @@ img{
   display: table;
   clear: both;
 }
+
+.workplease {
+  display: flex;
+  background: linear-gradient(to right top, #50a998, #44a1af);
+  color: black;
+  padding: 5px;
+  text-decoration: none;
+  justify-content: center;
+  border-radius: 2rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
