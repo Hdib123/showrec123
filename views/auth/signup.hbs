@@ -1,3 +1,11 @@
+<head>
+  <link rel="stylesheet" href="/stylesheets/signup.css">
+</head>
+
+<body class="main">
+  <main>
+<div class="glass">
+   <h2 class="yeah">Create a new account</h2>
 <form action="/auth/signup" method="POST">
    <label> Email
       <input type="email" name="email">
@@ -12,7 +20,8 @@
    <button type="submit">Submit</button>
 
    {{#if errorMessage}}
-   <h1 style="color: red;">{{errorMessage}}</h1>
+   <h3 style="color: red;">{{errorMessage}}</h3>
    {{/if}}
-
+</div>
 </form>
+  </main></body>

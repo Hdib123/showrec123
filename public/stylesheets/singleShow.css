@@ -1,0 +1,30 @@
+main{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+  display: flex;
+  justify-content: center;
+}
+
+
+.glass{
+  background: white;
+  padding: 30px;
+  height: 30%;
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255,255,255,0.3));
+  border-radius: 2rem;
+  backdrop-filter: blur(2rem);
+}
+
+.padding {
+  padding: 190px;
+}
+
+#buttons {
+  display: flex;
+  background: linear-gradient(to right top, #59ae9e, #5aaab6);
+  color: black;
+  padding: 5px;
+  text-decoration: none;
+  justify-content: center;
+}

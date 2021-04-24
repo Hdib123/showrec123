@@ -1,4 +1,11 @@
+<head>
+  <link rel="stylesheet" href="/stylesheets/singleShow.css">
+</head>
 
+<body class="main">
+  <main>
+<div class="glass">
+  <div class="padding">
 <h1>{{returnedShow.name}}</h1>
 <img src="{{returnedShow.mainPic}}" />
 <p>{{returnedShow.score}}</p>
@@ -24,3 +31,8 @@
 <form action="/show/{{returnedShow._id}}/planToWatch" method="POST">
 
   <button type="submit">Plan to Watch</button>
+
+</form></div>
+</div>
+  </main>
+  </body>
