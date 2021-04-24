@@ -1,14 +1,95 @@
-body {
+body main{
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-a {
-  color: #00b7ff;
 }
 
 h1 {
   color: 15px;
 }
 
-/*# sourceMappingURL=style.css.map */
+main{
+  min-height: 100vh;
+  background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glass{
+  background: white;
+  min-height: 80vh;
+  width: 60%;
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255,255,255,0.3));
+  border-radius: 2rem;
+  z-index: 3;
+  backdrop-filter: blur(2rem);
+}
+
+.circle1, .circle2{
+  background: white;
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.9), rgba(255,255,255,0.1));
+ height: 20rem;
+ width: 20rem;
+ position: absolute;
+border-radius: 50%;
+}
+
+.circle1 {
+  top: 5%;
+  right: 15%;
+  z-index: 2;
+}
+
+.circle2 {
+  bottom: 5%;
+  left: 10%;
+  z-index: 2;
+}
+
+.card {
+  display: flex;
+  background: linear-gradient(
+    to left top,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.5)
+  );
+  border-radius: 1rem;
+  margin: 2rem 1rem;
+  padding: 2rem;
+  box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.212);
+  justify-content: space-between;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+img{
+  width:100%;
+  max-width:220px;
+  padding: 15px;
+}
+
+.status {
+  margin-bottom: 3rem;
+}
+
+.status h1 {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}

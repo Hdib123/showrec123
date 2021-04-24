@@ -6,10 +6,31 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <title>{{title}}</title>
-   <link rel="stylesheet" href="/stylesheets/style.css" />
+     <link rel="stylesheet" href="/stylesheets/header.css">
+
 </head>
 
 <body>
+   
+   
+   <div class="header">
+  <a href="/" class="logo">Showrec</a>
+  <div class="header-right">
+{{#if user}}
+   <nav>
+      <a href="/auth/logout">Log out</a>
+      <a href="/profile">Profile</a>
+   </nav>
+   {{else}}
+   <nav>
+      <a href="/auth/login">Login</a>
+      <a href="/auth/signup">Sign Up</a>
+   </nav>
+   {{/if}}
+  </div>
+</div>
+
+<!--<div class="card">
    <a href="/">Home</a>
    {{#if user}}
    <nav>
@@ -22,7 +43,7 @@
       <a href="/auth/signup">Sign Up</a>
    </nav>
    {{/if}}
-
+</div>!-->
    {{{body}}}
 
 

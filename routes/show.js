@@ -21,10 +21,36 @@ router.post("/:showId/addToFavourites", (req, res, next) => {
     { new: true }
   ).then((returnedShow) => {
     res.redirect(`/show/${req.params.showId}`)
-    // res.render("singleShow", { returnedShow });
-    //res.redirect("singleShow", { returnedShow });
-    // window.location.pathname = "/";
   });
 });
+
+
+router.post("/:showId/viewedShow", (req, res, next) => {
+  console.log(req.params);
+
+  User.findByIdAndUpdate(
+    req.session.user._id,
+    { $addToSet: { viewedShows: req.params.showId } },
+    { new: true }
+  ).then((returnedShow) => {
+    res.redirect(`/show/${req.params.showId}`)
+  });
+});
+
+router.post("/:showId/planToWatch", (req, res, next) => {
+  // console.log(req.params);
+  console.log("LOOK HERE",req.session.user);
+
+  User.findByIdAndUpdate(
+    req.session.user._id,
+    { $addToSet: { planToWatch: req.params.showId } },
+    { new: true }
+  ).then((user) => {
+    console.log(user)
+    res.redirect(`/show/${req.params.showId}`)
+  });
+});
+
+
 
 module.exports = router;

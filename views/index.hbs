@@ -1,17 +1,48 @@
-<h1>{{title}} 🚀</h1>
-{{#each response}}
+<head>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
 
+<body class="main">
+  <main>
+
+<section class="glass">
+   <div class="games">
+          <div class="status">
+            <h1>Listed Shows</h1>
+          </div>
+<div class="cards">
+  {{#each response}}
+  <div class="card">
+    <img src="{{this.mainPic}}"></img>
+    <div class="card-info">
+      <h2>{{name}}</h2>
+      <p>{{this.genre}}</p>
+      <p>{{this.synopsis}}</p>
+      <button href="/show/{{this._id}}">Go to show page</button>
+    </div>
+  </div>
+  {{/each}}
+</div>
+   </div>
+
+<!--{{#each response}}
 <h3>{{name}}</h3><br>
-<a href="/show/{{this._id}}"><img src="{{this.mainPic}}"></img></a> <br>
-<p>{{this.genre}}</p><br>
-<p id="list">{{this.synopsis}}</p> <br>MORE<br>
+<a class="mainshow" href="/show/{{this._id}}"><img src="{{this.mainPic}}"></img></a> <br>
+<p class="mainshow">{{this.genre}}</p><br>
+<p class="list mainshow">{{this.synopsis}}</p> <br>MORE<br>
 MAL ID: {{this.id}}
-{{/each}}
+{{/each}} !-->
 
-<style>
-  #list {
+</section>
+</main>
+<div class="circle1"></div>
+<div class="circle2"></div>
+</body>
+
+<!--<style>
+  .list {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
-</style>
+</style>!-->
